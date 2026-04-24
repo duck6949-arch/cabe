@@ -15,6 +15,7 @@ export interface Character {
   portraitUrl: string;
   iconUrl: string;
   color: string;
+  story?: string;
   // Stats for Battle Chronicle
   level: number;
   friendship: number;

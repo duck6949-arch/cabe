@@ -167,15 +167,10 @@ export default function App() {
             <span className="font-bold text-xl tracking-tight text-[#4D80F0]">HoYoLAB</span>
           </div>
           <nav className="flex items-center gap-8 text-sm font-medium text-white/60">
-            <a href="#" className="text-[#4D80F0] font-bold">Battle Chronicle</a>
-            <a href="#" className="hover:text-[#4D80F0] transition-colors">Tools</a>
-            <a href="#" className="hover:text-[#4D80F0] transition-colors">Guides</a>
+            <a href="#" className="text-[#4D80F0] font-bold">Thông tin nhân vật</a>
           </nav>
         </div>
-        <div className="flex items-center gap-4">
-           <div className="w-8 h-8 rounded-full bg-white/10 border border-white/10" />
-           <p className="text-xs font-bold text-white/60">Traveler_9527</p>
-        </div>
+        {/* Removed user icon div */}
       </header>
 
       {/* Main Layout Area */}
@@ -255,13 +250,6 @@ export default function App() {
                         <div>
                           <h1 className="text-4xl font-bold tracking-tight text-white flex items-center gap-3">
                             {selectedCharacter.name}
-                            <button 
-                              onClick={handleUpdateImage}
-                              className="p-1.5 bg-white/5 rounded-lg hover:bg-white/10 text-white/40 hover:text-white transition-colors"
-                              title="Replace Character Image"
-                            >
-                              <Camera className="w-3.5 h-3.5" />
-                            </button>
                           </h1>
                           <div className="flex items-center gap-2 mt-1">
                              <div className="flex">
@@ -277,7 +265,7 @@ export default function App() {
                        <div className="bg-white/5 px-6 py-3 rounded-2xl flex items-center gap-3 border border-white/5">
                           <MapPin className="w-4 h-4 text-[#4D80F0]" />
                           <div>
-                             <p className="text-[10px] text-white/40 uppercase tracking-wider font-bold">Affiliation</p>
+                             <p className="text-[10px] text-white/40 uppercase tracking-wider font-bold">Thuộc</p>
                              <p className="text-sm font-bold text-white leading-none">{selectedCharacter.affiliation}</p>
                           </div>
                        </div>
@@ -308,7 +296,7 @@ export default function App() {
                        <div className="space-y-6">
                           <div className="flex items-center gap-2 text-[#4D80F0]">
                              <History className="w-5 h-5" />
-                             <h3 className="text-lg font-bold tracking-tight">Character Story</h3>
+                             <h3 className="text-lg font-bold tracking-tight">Cốt Truyện Nhân Vật</h3>
                           </div>
                           
                           <div className="relative">
@@ -320,22 +308,14 @@ export default function App() {
 
                           <div className="space-y-4 pt-4">
                              <div className="p-5 bg-white/5 rounded-2xl border border-white/5">
-                                <h4 className="text-[10px] text-white/40 uppercase font-black tracking-[0.2em] mb-3">Lore Snippet</h4>
-                                <p className="text-sm text-white/60 leading-relaxed">
-                                   As a prominent figure in {selectedCharacter.affiliation}, {selectedCharacter.name} has played a pivotal role in the region's recent history. Known as the "{selectedCharacter.title}", their presence is both respected and feared by those who understand the true weight of their power.
+                                <p className="text-sm text-white/60 leading-relaxed whitespace-pre-line">
+                                   {selectedCharacter.story || `Là một nhân vật nổi bật trong ${selectedCharacter.affiliation}, ${selectedCharacter.name} đã đóng một vai trò nòng cốt trong lịch sử gần đây của khu vực. Được biết đến với danh hiệu "${selectedCharacter.title}", sự hiện diện của họ vừa được tôn trọng vừa bị e sợ bởi những ai hiểu được sức mạnh thực sự mà họ đang nắm giữ.`}
                                 </p>
                              </div>
                           </div>
                        </div>
 
-                       <div className="flex gap-4 pt-6">
-                          <button className="flex-1 bg-[#4D80F0] text-white py-4 rounded-xl font-bold shadow-lg shadow-[#4D80F0]/30 hover:bg-[#3E6CD9] active:scale-[0.98] transition-all flex items-center justify-center gap-2">
-                             Full Archive Entry
-                          </button>
-                          <button className="p-4 bg-white/5 border border-white/5 rounded-xl hover:bg-white/10 transition-colors">
-                             <Share2 className="w-5 h-5 text-white/60" />
-                          </button>
-                       </div>
+                       {/* Removed Share Character button section */}
                     </div>
                   </div>
                 </div>
